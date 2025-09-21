@@ -1,0 +1,136 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&family=Nunito:wght@400;500;600;700;800&family=Pacifico:wght@400;500;700;800&display=swap');
+
+@import "tailwindcss";
+
+:root {
+    --primary: #FEA116;
+    --light: #F1F8FF;
+    --dark: #0F172B;
+}
+
+@layer base {
+  body {
+    font-family: 'Heebo', sans-serif; 
+  }
+}
+
+@layer utilities {
+  .font-nunito {
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .font-pacifico{
+    font-family: 'Pacifico', sans-serif;
+  }
+
+  .text-primary{
+
+    color: var(--primary);
+
+  }
+
+  .bg-primary{
+
+    background-color: var(--primary);
+
+  }
+
+  .border-primary{
+
+    border-color: #FEA116;
+
+  }
+}
+
+.cta-button::before,
+.cta-button::after{
+  content: attr(data-hover);
+  font-family: 'Nunito', sans-serif; 
+  color: var(--light);
+  background: var(--primary);
+  width: 100%;
+  height: 100%;
+  padding: 8px 24px;
+  font-size: 0.875rem; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-50%) translateY(0) scale(1.2);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.cta-button::after{
+  color: var(--primary);
+  background: var(--light);
+  transform: translateX(-50%) translateY(50px) scale(1.2);
+}
+
+.cta-button:hover::before{
+  transform: translateX(-50%) translateY(-50px) scale(0) rotate(120deg);
+  text-shadow: 0 0 5px rgb(37, 37, 37);
+}
+
+.cta-button:hover::after{ 
+  transform: translateX(-50%) translateY(0) scale(1.2);
+}
+
+
+.hero-cta:before{
+  content: "";
+  background: var(--light);
+  width: 0%;
+  height: 100%;
+  transform: skewX(45deg);
+  position: absolute;
+  top: 0;
+  left: -40px;
+  transition: all 1s;
+  z-index: -1;
+}
+
+.hero-cta:hover:before{ 
+    
+  width: 160%;
+
+}
+
+
+.section-title{
+
+  position: relative;
+  display: inline-block;
+  font-size: 1.5rem;
+ 
+}
+
+.section-title::before {
+  position: absolute;
+  content: "";
+  width: 45px;
+  height: 2px;
+  top: 50%;
+  left: -55px;
+  margin-top: -1px;
+  background: var(--primary);
+}
+
+.section-title::after {
+  position: absolute;
+  content: "";
+  width: 45px;
+  height: 2px;
+  top: 50%;
+  right: -55px;
+  margin-top: -1px;
+  background: var(--primary);
+}
+
+.section-title.text-left::before,
+.section-title.text-right::after {
+  display: none;
+}
