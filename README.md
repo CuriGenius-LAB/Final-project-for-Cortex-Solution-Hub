@@ -1,1 +1,5 @@
-# Final-project-for-Cortex-Solution-Hub
+# Frameworks Used There<br> 
+React Js<br>
+Tailwind<br>
+# Tools Used For Animation<br>
+Framer motion
